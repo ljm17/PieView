@@ -1,9 +1,9 @@
 # PieView
 Pie chart, including animation and data percentage, and text display.
 # Effect display
-  ![image](https://github.com/ljm17/PieView/images/img2.png)<br/>
-  ![image](https://github.com/ljm17/PieView/images/img1.jpg)<br/>
-  ![image](https://github.com/ljm17/PieView/images/img3.jpg)<br/>
+  ![image](https://github.com/ljm17/PieView/raw/master/images/img2.png)<br/>
+  ![image](https://github.com/ljm17/PieView/raw/master/images/img1.jpg)<br/>
+  ![image](https://github.com/ljm17/PieView/raw/master/images/img3.jpg)<br/>
 # Usages
   //设置数据  <br/>
   mPieView.setData(list);<br/>
