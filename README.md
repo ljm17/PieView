@@ -28,7 +28,7 @@ setCenterText(String centerText) | 设置中心文字，default = "PieView" |
 setShowCenterText(boolean showCenterText) | 是否显示中心文字,default = false |
 refresh() | 刷新视图 |
   
-  ###example：
+### example：
   ```
   //链式设置
 mPieView.setData(list)
@@ -38,3 +38,5 @@ mPieView.setData(list)
                 .setShowAnimator(true)
                 .refresh();
   ```
+# About Me
+CSDN :[https://blog.csdn.net/qq_40861368](https://blog.csdn.net/qq_40861368)
