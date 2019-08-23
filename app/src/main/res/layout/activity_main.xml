@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="半透明圆半径"
+            android:padding="10dp"
+            android:gravity="center"/>
+
+        <SeekBar
+            android:id="@+id/sb_alpha_circle_radius"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#F5F6F9"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="空心圆半径"
+            android:padding="10dp"
+            android:gravity="center"/>
+
+        <SeekBar
+            android:id="@+id/sb_hole_circle_radius"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#F5F6F9"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="半透明圆透明度"
+            android:padding="10dp"
+            android:gravity="center"/>
+
+        <SeekBar
+            android:id="@+id/sb_alpha_circle_alpha"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#F5F6F9"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_show_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="百分比展示"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/tv_block_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="含重点数据"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/tv_default_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="普通数据"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/tv_center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中心文字"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#F5F6F9"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <com.ljm.pieviewdemo.pieview.PieView
+        android:id="@+id/pie_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

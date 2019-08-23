@@ -1,9 +1,12 @@
 # PieView
 Pie chart, including animation and data percentage, and text display.
 # Effect display
-  ![image](https://github.com/ljm17/PieView/raw/master/images/img2.png)<br/>
-  <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img1.jpg"/><br/>
-  <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img3.jpg"/><br/>
+  ![image](https://github.com/ljm17/PieView/raw/master/images/animator.gif)<br/>
+  <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img1.jpg"/>
+  <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img2.jpg"/>
+  <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img3.jpg"/>
+  <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img4.jpg"/>
+  <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img5.jpg"/><br/>
  
 # Usages
   //设置数据  <br/>
