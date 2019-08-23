@@ -27,3 +27,14 @@ setCenterTextColor(int centerTextColor) | 设置中心文字颜色，default = C
 setCenterText(String centerText) | 设置中心文字，default = "PieView" |
 setShowCenterText(boolean showCenterText) | 是否显示中心文字,default = false |
 refresh() | 刷新视图 |
+  
+  ###example：
+  ```
+  //链式设置
+mPieView.setData(list)
+                .setCenterText("TIME")
+                .setCenterTextSize(60)
+                .setCenterTextColor(Color.BLUE)
+                .setShowAnimator(true)
+                .refresh();
+  ```
