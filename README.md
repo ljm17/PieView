@@ -9,33 +9,21 @@ Pie chart, including animation and data percentage, and text display.
   <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img5.jpg"/><br/>
  
 # Usages
-  //设置数据  <br/>
-  mPieView.setData(list);<br/>
-  //开启动画,default = false<br/>
-  mPieView.setShowAnimator(true);<br/>
-  //设置中间透明圈的透明度,default = 0.4f<br/>
-  mPieView.setAlpha(0.5f);<br/>
-  //设置初始绘制角度,default = 0<br/>
-  mPieView.setStartDegree(0);<br/>
-  //设置板块凸出距离，default = 30f<br/>
-  mPieView.setSpace(30f);<br/>
-  //是否显示百分比,default = true<br/>
-  mPieView.setDisPlayPercent(false);<br/>
-  //设置板块字体大小,default = 30<br/>
-  mPieView.setBlockTextSize(30);<br/>
-  //设置板块字体颜色,default = Color.WHITE<br/>
-  mPieView.setBlockTextColor(Color.WHITE);<br/>
-  //是否显示中心文字,default = false<br/>
-  mPieView.setShowCenterText(true);<br/>
-  //设置中心文字，default = "PieView"<br/>
-  mPieView.setCenterText("FRUITS");<br/>
-  //设置中心文字大小,default = 50<br/>
-  mPieView.setCenterTextSize(60);<br/>
-  //设置中心文字颜色，default = Color.GRAY<br/>
-  mPieView.setCenterTextColor(Color.GRAY);<br/>
-  //设置白色内孔占外圆比例，default = 0.5f,设置值应在（0,1）之间<br/>
-  // 并不是很建议设置，设置不合理可能引起图形错乱<br/>
-  mPieView.setHoleRadiusPercent(0.5f);<br/>
-  //设置透明圆占外圆比例，default = 0.6f,设置值应在（0,1）之间，并大于等于白色内孔<br/>
-  // 并不是很建议设置，设置不合理可能引起图形错乱<br/>
-  mPieView.setAlphaRadiusPercent(0.6f);<br/>
+  
+  方法 | 介绍   
+-|-
+setData(List<PieEntry> data) | 设置数据 |
+setStartDegree(float startDegree)| 设置初始绘制角度,default = 180 |
+setCenterAlpha(float alpha) | 设置中间透明圈的透明度,default = 0.4f |
+setHoleRadiusPercent(float holeRadiusPercent) | 设置白色内孔占外圆比例，default = 0.5f,设置值应在（0,1）之间 |
+setAlphaRadiusPercent(float alphaRadiusPercent) | 设置透明圆占外圆比例，default = 0.6f,设置值应在（0,1）之间，并大于等于白色内孔 |
+setSpace(int space) | 设置凸出板块与相邻间距，default = 30 |
+setDisPlayPercent(boolean disPlayPercent) | 设置是否显示百分比,default = true |
+setShowAnimator(boolean showAnimator) | 开启动画,default = false |
+setBlockTextSize(int blockTextSize) | 设置板块字体大小,default = 30 |
+setBlockTextColor(int blockTextColor) | 设置板块字体颜色,default = Color.WHITE |
+setCenterTextSize(int centerTextSize) | 设置中心文字大小,default = 50 |
+setCenterTextColor(int centerTextColor) | 设置中心文字颜色，default = Color.GRAY |
+setCenterText(String centerText) | 设置中心文字，default = "PieView" |
+setShowCenterText(boolean showCenterText) | 是否显示中心文字,default = false |
+refresh() | 刷新视图 |
