@@ -26,10 +26,9 @@ dependencies {
 	        implementation 'com.github.ljm17:PieView:1.0'
 	}
 ```
-<br/>
+
 ### Method
-```
-```
+
   方法 | 介绍   
 -|-
 setData(List<PieEntry> data) | 设置数据 |
