@@ -24,4 +24,6 @@ public class Config {
     public static final int DEFAULT_BLOCK_TEXT_SIZE = 30;
 
     public static final int DEFAULT_CENTER_TEXT_SIZE = 50;
+
+    public static final int DEFAULT_ANIMATOR_TIME = 2000;
 }

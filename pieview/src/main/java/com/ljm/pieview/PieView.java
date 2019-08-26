@@ -106,6 +106,9 @@ public class PieView extends View {
     /** 动画*/
     private ValueAnimator mAnimator;
 
+    /** 动画时长*/
+    private int mAnimatorTime = Config.DEFAULT_ANIMATOR_TIME;
+
     /**
      * Instantiates a new Pie view.
      *
@@ -321,7 +324,7 @@ public class PieView extends View {
     private void initValueAnimator(){
         if(null == mAnimator) {
             mAnimator = ValueAnimator.ofFloat(0, 360f);
-            mAnimator.setDuration(3000);
+            mAnimator.setDuration(mAnimatorTime);
             mAnimator.setInterpolator(new LinearInterpolator());
             mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
@@ -651,6 +654,28 @@ public class PieView extends View {
     public PieView setShowCenterText(boolean showCenterText) {
         this.showCenterText = showCenterText;
         return this;
+    }
+
+    /**
+     * Sets Animator Duration
+     *
+     * @param duration the animator duration
+     */
+    public PieView setAnimatorDuration(int duration) {
+        this.mAnimatorTime = duration;
+        if (mAnimator != null) {
+            mAnimator.setDuration(duration);
+        }
+        return this;
+    }
+
+    /**
+     * Gets animator duration
+     *
+     * @return the animator duration
+     */
+    public int getAnimatorDuration() {
+        return mAnimatorTime;
     }
 
     private int getRandColor(){
