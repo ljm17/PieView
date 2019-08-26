@@ -9,6 +9,22 @@ Pie chart, including animation and data percentage, and text display.
   <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img5.jpg"/><br/>
  
 # Usages
+Step 1. Add the JitPack repository to your build file
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+Step 2. Add the dependency
+```
+dependencies {
+	        implementation 'com.github.ljm17:PieView:1.0'
+	}
+```
 
   方法 | 介绍   
 -|-
