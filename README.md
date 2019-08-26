@@ -9,7 +9,7 @@ Pie chart, including animation and data percentage, and text display.
   <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img5.jpg"/><br/>
  
 # Usages
-## Dependency
+### Dependency
 Step 1. Add the JitPack repository to your build file
 ```
 allprojects {
@@ -27,7 +27,9 @@ dependencies {
 	}
 ```
 <br/>
-## Method
+### Method
+```
+```
   方法 | 介绍   
 -|-
 setData(List<PieEntry> data) | 设置数据 |
@@ -46,7 +48,7 @@ setCenterText(String centerText) | 设置中心文字，default = "PieView"，�
 setShowCenterText(boolean showCenterText) | 是否显示中心文字，default = false |
 refresh() | 刷新视图 |
   
-## Example：
+### Example：
   ```
   //链式设置
 mPieView.setData(list)
