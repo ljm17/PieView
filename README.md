@@ -9,21 +9,7 @@ Pie chart, including animation and data percentage, and text display.
   <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img5.jpg"/><br/>
  
 # Usages
-  Add it in your root build.gradle at the end of repositories:
 
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-  
-Step 2. Add the dependency
-
-	dependencies {
-	        implementation 'com.github.ljm17:PieView:1.0'
-	}
-  <br/><br/><br/>
   方法 | 介绍   
 -|-
 setData(List<PieEntry> data) | 设置数据 |
