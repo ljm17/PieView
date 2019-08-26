@@ -140,7 +140,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"/>
 
-    <com.ljm.pieviewdemo.pieview.PieView
+    <com.ljm.pieview.PieView
         android:id="@+id/pie_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

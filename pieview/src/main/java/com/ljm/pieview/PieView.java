@@ -1,4 +1,4 @@
-package com.ljm.pieviewdemo.pieview;
+package com.ljm.pieview;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Looper;
+import android.support.annotation.ColorInt;
 import android.support.annotation.FloatRange;
 import android.support.annotation.Nullable;
 import android.support.annotation.Px;
@@ -43,25 +44,25 @@ public class PieView extends View {
     private Paint mBlockTextPaint;
 
     /** 起始绘制角度*/
-    private float mStartDegree = 180;
+    private float mStartDegree = Config.DEFAULT_START_DEGREE;
 
     /** 当前角度*/
     private float mCurrentDegree;
 
     /** 内透明圆透明度*/
-    private float mAlpha = 0.4f;
+    private float mAlpha = Config.DEFAULT_CIRCLE_ALPHA;
 
     /** 外圆半径*/
     private float mRadius;
 
     /** 中心孔占外圆半径的百分比*/
-    private float mHoleRadiusPercent = 0.5f;
+    private float mHoleRadiusPercent = Config.DEFAULT_HOLE_RADIUS_PERCENT;
 
     /** 内透明圆占外圆半径的百分比*/
-    private float mAlphaRadiusPercent = 0.6f;
+    private float mAlphaRadiusPercent = Config.DEFAULT_ALPHA_RADIUS_PERCENT;
 
     /** 凸起板块之间的间距*/
-    private int mSpace = 30;
+    private int mSpace = Config.DEFAULT_BLOCK_SPACE;
 
     private List<PieEntry> mData;
 
@@ -85,16 +86,16 @@ public class PieView extends View {
     private boolean showAnimator = false;
 
     /** 版块上的字号*/
-    private int mBlockTextSize = 30;
+    private int mBlockTextSize = Config.DEFAULT_BLOCK_TEXT_SIZE;
 
     /** 版块上文字的颜色*/
-    private int mBlockTextColor = Color.WHITE;
+    private int mBlockTextColor = Config.DEFAULT_BLOCK_TEXT_COLOR;
 
     /** 中心字号*/
-    private int mCenterTextSize = 50;
+    private int mCenterTextSize = Config.DEFAULT_CENTER_TEXT_SIZE;
 
     /** 中心字颜色*/
-    private int mCenterTextColor = Color.GRAY;
+    private int mCenterTextColor = Config.DEFAULT_CENTER_TEXT_COLOR;
 
     /** 中心文字*/
     private String mCenterText;
@@ -103,7 +104,7 @@ public class PieView extends View {
     private boolean showCenterText;
 
     /** 动画*/
-    private ValueAnimator animator;
+    private ValueAnimator mAnimator;
 
     /**
      * Instantiates a new Pie view.
@@ -194,7 +195,6 @@ public class PieView extends View {
             }
             //计算该板块角度
             float sweepAngle = getData().get(i).getData() / sumData * 360f;
-            //保存当前画布状态
             canvas.save();
             //当前模块角平分线的sin和cos值
             if (getData().get(i).isRaised()){
@@ -205,7 +205,6 @@ public class PieView extends View {
             }
             //绘制外圆
             canvas.drawArc(mRadiusRectF, mCurrentDegree, sweepAngle, true, mOutPaint);
-            //恢复平移前的状态
             canvas.restore();
 
             mCurrentDegree += sweepAngle;
@@ -320,18 +319,18 @@ public class PieView extends View {
     }
 
     private void initValueAnimator(){
-        if(null == animator) {
-            animator = ValueAnimator.ofFloat(0, 360f);
-            animator.setDuration(3000);
-            animator.setInterpolator(new LinearInterpolator());
-            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        if(null == mAnimator) {
+            mAnimator = ValueAnimator.ofFloat(0, 360f);
+            mAnimator.setDuration(3000);
+            mAnimator.setInterpolator(new LinearInterpolator());
+            mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     mAnimatorValue = (float) animation.getAnimatedValue();
                     refresh();
                 }
             });
-            animator.addListener(new Animator.AnimatorListener() {
+            mAnimator.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animation) {
 
@@ -354,7 +353,7 @@ public class PieView extends View {
                 }
             });
         }
-        animator.start();
+        mAnimator.start();
     }
 
     /**
@@ -503,7 +502,7 @@ public class PieView extends View {
     }
 
     /**
-     * Is show animator boolean.
+     * Is show mAnimator boolean.
      *
      * @return the boolean
      */
@@ -512,9 +511,9 @@ public class PieView extends View {
     }
 
     /**
-     * Sets show animator.
+     * Sets show mAnimator.
      *
-     * @param showAnimator the show animator
+     * @param showAnimator the show mAnimator
      */
     public PieView setShowAnimator(boolean showAnimator) {
         if (Looper.getMainLooper() != Looper.myLooper()){
@@ -529,8 +528,8 @@ public class PieView extends View {
                     initValueAnimator();
                 }
             });
-        }else if (null != animator && animator.isRunning()){
-            animator.cancel();
+        }else if (null != mAnimator && mAnimator.isRunning()){
+            mAnimator.cancel();
         }
         return this;
     }
@@ -569,7 +568,7 @@ public class PieView extends View {
      *
      * @param blockTextColor the block text color
      */
-    public PieView setBlockTextColor(int blockTextColor) {
+    public PieView setBlockTextColor(@ColorInt int blockTextColor) {
         this.mBlockTextColor = blockTextColor;
         mBlockTextPaint.setColor(blockTextColor);
         return this;

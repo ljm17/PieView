@@ -1,4 +1,4 @@
-package com.ljm.pieviewdemo.pieview;
+package com.ljm.pieview;
 
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;

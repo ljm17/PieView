@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.ljm.pieviewdemo.pieview.PieEntry;
-import com.ljm.pieviewdemo.pieview.PieView;
+import com.ljm.pieview.PieEntry;
+import com.ljm.pieview.PieView;
 
 import java.util.ArrayList;
 import java.util.List;
