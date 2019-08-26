@@ -21,12 +21,13 @@ allprojects {
 ```
 <br/>
 Step 2. Add the dependency
+
 ```
 dependencies {
 	        implementation 'com.github.ljm17:PieView:1.0'
 	}
 ```
-
+<br/>
 ### Method
 
   方法 | 介绍   
