@@ -9,7 +9,7 @@ Pie chart, including animation and data percentage, and text display.
   <img width="320" height="564" src="https://github.com/ljm17/PieView/raw/master/images/img5.jpg"/><br/>
  
 # Usages
-### Dependency
+### Dependency：
 Step 1. Add the JitPack repository to your build file
 ```
 allprojects {
@@ -28,7 +28,8 @@ dependencies {
 	}
 ```
 <br/>
-### Method
+
+### Method：
 
   方法 | 介绍   
 -|-
