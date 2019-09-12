@@ -59,5 +59,5 @@ mPieView.setData(list)
                 .setShowAnimator(true)
                 .refresh();
   ```
-# About Me
-CSDN :[https://blog.csdn.net/qq_40861368](https://blog.csdn.net/qq_40861368)
+# Code Explain
+CSDN :[源码解析](https://blog.csdn.net/qq_40861368/article/details/83716485)
