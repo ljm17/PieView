@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PieView">
+        <attr name="startDegree" format="float"/>
+        <attr name="insideAlpha" format="float"/>
+        <attr name="alphaRadiusPercent" format="float"/>
+        <attr name="holeRadiusPercent" format="float"/>
+        <attr name="blockSpace" format="dimension"/>
+        <attr name="disPlayPercent" format="boolean"/>
+        <attr name="blockTextSize" format="dimension"/>
+        <attr name="blockTextColor" format="color|reference"/>
+        <attr name="centerTextSize" format="dimension"/>
+        <attr name="centerTextColor" format="color"/>
+        <attr name="showCenterText" format="boolean"/>
+        <attr name="centerText" format="string"/>
+        <attr name="showAnimator" format="boolean"/>
+        <attr name="animatorDuration" format="integer"/>
+    </declare-styleable>
+</resources>

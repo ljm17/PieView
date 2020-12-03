@@ -1,12 +1,13 @@
 package com.ljm.pieview;
 
 import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
 
 /**
+ * 饼状图数据实体类
+ *
  * @author ljm
  */
-public class PieEntry {
+public class PieEntry implements IPieEntry{
 
     /** 板块颜色*/
     private int color;
@@ -18,62 +19,70 @@ public class PieEntry {
     private String msg;
 
     /** 该板块是否凸起*/
-    private boolean isRaised;
+    private boolean raised;
 
 
-    public PieEntry(float data, @NonNull String msg) {
+    public PieEntry(float data, String msg) {
         this.data = data;
         this.msg = msg;
     }
 
-    public PieEntry(float data, @NonNull String msg, @ColorInt int color) {
+    public PieEntry(float data, String msg, @ColorInt int color) {
         this.color = color;
         this.data = data;
         this.msg = msg;
     }
 
-    public PieEntry(float data, @NonNull String msg, boolean isRaised) {
+    public PieEntry(float data, String msg, boolean isRaised) {
         this.data = data;
         this.msg = msg;
-        this.isRaised = isRaised;
+        this.raised = isRaised;
     }
 
-    public PieEntry(float data, @NonNull String msg, @ColorInt int color, boolean isRaised) {
+    public PieEntry(float data, String msg, @ColorInt int color, boolean isRaised) {
         this.color = color;
         this.data = data;
         this.msg = msg;
-        this.isRaised = isRaised;
+        this.raised = isRaised;
     }
 
-    public int getColor() {
-        return color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
-    }
-
-    public float getData() {
-        return data;
-    }
-
-    public void setData(float data) {
-        this.data = data;
-    }
-
-    public String getMsg() {
+    @Override
+    public String getBlockMsg() {
         return msg;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    @Override
+    public void setBlockMsg(String blockMsg) {
+        this.msg = blockMsg;
     }
 
-    public boolean isRaised() {
-        return isRaised;
+    @Override
+    public int getBlockColor() {
+        return color;
     }
 
-    public void setRaised(boolean raised) {
-        isRaised = raised;
+    @Override
+    public void setBlockColor(int blockColor) {
+        this.color = blockColor;
+    }
+
+    @Override
+    public float getBlockData() {
+        return data;
+    }
+
+    @Override
+    public void setBlockData(float data) {
+        this.data = data;
+    }
+
+    @Override
+    public boolean isBlockRaised() {
+        return raised;
+    }
+
+    @Override
+    public void setBlockRaised(boolean raised) {
+        this.raised = raised;
     }
 }

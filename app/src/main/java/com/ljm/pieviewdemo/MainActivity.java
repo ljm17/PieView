@@ -19,12 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar mAlphaSb;
     private TextView mPercentage;
     private TextView mBlockUpTv;
-    private TextView mDefaultTv;
+    private TextView mStartAnimTv;
     private TextView mCenterTextTv;
     private PieView mPieView;
-
-    private boolean disPlayPercentage  = true;
-    private boolean disPlayCenterText  = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             list.add(new PieEntry(i * 20, String.format("第%s区", i)));
         }
         mPieView.setData(list)
-                .setShowAnimator(true)
                 .refresh();
     }
 
@@ -51,55 +47,47 @@ public class MainActivity extends AppCompatActivity {
         mHoleRadiusSb = findViewById(R.id.sb_hole_circle_radius);
         mPercentage = findViewById(R.id.tv_show_percentage);
         mBlockUpTv = findViewById(R.id.tv_block_up);
-        mDefaultTv = findViewById(R.id.tv_default_data);
         mCenterTextTv = findViewById(R.id.tv_center_text);
+        mStartAnimTv = findViewById(R.id.tv_start_anim);
         mPieView = findViewById(R.id.pie_view);
 
         mAlphaRadiusSb.setProgress(50);
         mHoleRadiusSb.setProgress(60);
         mAlphaSb.setProgress(40);
+
+        mPercentage.setSelected(true);
     }
 
     private void initListener() {
         mPercentage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                disPlayPercentage = !disPlayPercentage;
-                mPieView.setDisPlayPercent(disPlayPercentage).refresh();
+                v.setSelected(!v.isSelected());
+                mPieView.setDisPlayPercent(v.isSelected()).refresh();
             }
         });
 
         mBlockUpTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<PieEntry> list = new ArrayList<>();
-                for (int i = 1; i < 7; i ++) {
-                    list.add(new PieEntry(i * 20, String.format("第%s区", i), i == 4));
-                }
-                mPieView.setData(list)
-                        .setShowAnimator(true)
-                        .refresh();
+                v.setSelected(!v.isSelected());
+                mPieView.getData().get(3).setBlockRaised(v.isSelected());
+                mPieView.refresh();
             }
         });
 
-        mDefaultTv.setOnClickListener(new View.OnClickListener() {
+        mStartAnimTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<PieEntry> list = new ArrayList<>();
-                for (int i = 1; i < 7; i ++) {
-                    list.add(new PieEntry(i * 20, String.format("第%s区", i)));
-                }
-                mPieView.setData(list)
-                        .setShowAnimator(true)
-                        .refresh();
+                mPieView.startAnimator();
             }
         });
 
         mCenterTextTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                disPlayCenterText = !disPlayCenterText;
-                mPieView.setShowCenterText(disPlayCenterText).refresh();
+                v.setSelected(!v.isSelected());
+                mPieView.setShowCenterText(v.isSelected()).refresh();
             }
         });
 

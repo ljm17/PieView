@@ -98,6 +98,7 @@
             android:textStyle="bold"
             android:padding="10dp"
             android:gravity="center"
+            android:textColor="@color/sl_main_btn"
             android:background="?android:attr/selectableItemBackground"/>
 
         <TextView
@@ -108,16 +109,7 @@
             android:textStyle="bold"
             android:padding="10dp"
             android:gravity="center"
-            android:background="?android:attr/selectableItemBackground"/>
-
-        <TextView
-            android:id="@+id/tv_default_data"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="普通数据"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:gravity="center"
+            android:textColor="@color/sl_main_btn"
             android:background="?android:attr/selectableItemBackground"/>
 
         <TextView
@@ -128,9 +120,19 @@
             android:textStyle="bold"
             android:padding="10dp"
             android:gravity="center"
+            android:textColor="@color/sl_main_btn"
             android:background="?android:attr/selectableItemBackground"/>
 
-
+        <TextView
+            android:id="@+id/tv_start_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始动画"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textColor="#222222"
+            android:background="?android:attr/selectableItemBackground"/>
     </LinearLayout>
 
     <View
