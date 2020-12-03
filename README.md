@@ -48,6 +48,7 @@ PieView | setCenterText(String centerText) | 设置中心文字，default = "Pie
 PieView | setShowCenterText(boolean showCenterText) | 是否显示中心文字，default = false |
 void | refresh() | 刷新视图 |
 void | startAnimator() | 开始动画 |
+void | cancelAnimator() | 取消动画 |
   
 ### Example：
   ```
